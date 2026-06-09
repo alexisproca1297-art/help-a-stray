@@ -18,26 +18,23 @@ $stmt = $pdo->query("
 ");
 
 $applications = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$pageTitle = "Adoption Applications | Help A Stray";
+require_once '../includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Adoption Applications | Help A Stray</title>
-</head>
-<body>
 
 <h1>Adoption Applications</h1>
 
-<a href="dashboard.php">Back to Dashboard</a>
-<br><br>
+<div class="card">
+    <a class="btn" href="dashboard.php">Back to Dashboard</a>
+</div>
 
 <?php if (count($applications) === 0): ?>
-    <p>No adoption applications have been submitted yet.</p>
+    <div class="card">
+        <p>No adoption applications have been submitted yet.</p>
+    </div>
 <?php else: ?>
 
-<table border="1" cellpadding="10">
+<table>
     <tr>
         <th>ID</th>
         <th>Animal</th>
@@ -73,5 +70,4 @@ $applications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php endif; ?>
 
-</body>
-</html>
+<?php require_once '../includes/footer.php'; ?>
