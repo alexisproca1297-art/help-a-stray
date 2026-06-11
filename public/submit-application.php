@@ -44,21 +44,20 @@ $stmt->execute([
     $experience
 ]);
 
+$pageTitle = "Application Submitted | Help A Stray";
+require_once '../includes/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Application Submitted | Help A Stray</title>
-</head>
-<body>
+<div class="card">
+    <h1>Application Submitted</h1>
 
-<h1>Application Submitted</h1>
+    <p>
+        Thank you. Your adoption application has been submitted successfully.
+        The rescue centre administrator will review the application.
+    </p>
 
-<p>Thank you. Your adoption application has been submitted successfully.</p>
+    <a class="btn" href="animals.php">Back to Available Animals</a>
+    <a class="btn" href="index.php">Return Home</a>
+</div>
 
-<a href="animals.php">Back to Available Animals</a>
-
-</body>
-</html>
+<?php require_once '../includes/footer.php'; ?>

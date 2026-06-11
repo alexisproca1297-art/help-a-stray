@@ -136,3 +136,29 @@ a {
 a:hover {
     opacity: 0.8;
 }
+
+.badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.badge-available,
+.badge-approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.badge-reserved,
+.badge-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.badge-adopted,
+.badge-rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}

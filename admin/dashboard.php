@@ -105,7 +105,11 @@ require_once '../includes/header.php';
             <tr>
                 <td><?php echo htmlspecialchars($application['full_name']); ?></td>
                 <td><?php echo htmlspecialchars($application['animal_name']); ?></td>
-                <td><?php echo htmlspecialchars($application['status']); ?></td>
+                <td>
+                    <span class="badge badge-<?php echo strtolower($application['status']); ?>">
+                        <?php echo htmlspecialchars($application['status']); ?>
+                    </span>
+                </td>               
                 <td><?php echo htmlspecialchars($application['application_date']); ?></td>
                 <td>
                     <a href="view-application.php?id=<?php echo $application['application_id']; ?>">

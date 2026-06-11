@@ -14,44 +14,73 @@ $animal = $stmt->fetch(PDO::FETCH_ASSOC);
 if (!$animal) {
     die("Animal not found.");
 }
+$pageTitle = "Apply to Adopt | Help A Stray";
+require_once '../includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Apply to Adopt | Help A Stray</title>
-</head>
-<body>
 
 <h1>Apply to Adopt <?php echo htmlspecialchars($animal['name']); ?></h1>
 
-<form action="submit-application.php" method="POST">
-    <input type="hidden" name="animal_id" value="<?php echo $animal['animal_id']; ?>">
+<div class="card">
+    <h2>Animal Selected</h2>
 
-    <label>Full Name:</label><br>
-    <input type="text" name="full_name" required><br><br>
+    <?php if (!empty($animal['image'])): ?>
+        <img
+            src="uploads/<?php echo htmlspecialchars($animal['image']); ?>"
+            alt="<?php echo htmlspecialchars($animal['name']); ?>"
+            style="width:100%; max-height:300px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
+    <?php endif; ?>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+    <p><strong>Name:</strong> <?php echo htmlspecialchars($animal['name']); ?></p>
+    <p><strong>Species:</strong> <?php echo htmlspecialchars($animal['species']); ?></p>
+    <p><strong>Breed:</strong> <?php echo htmlspecialchars($animal['breed']); ?></p>
+</div>
 
-    <label>Phone:</label><br>
-    <input type="text" name="phone"><br><br>
+<div class="card">
+    <h2>Adoption Application Form</h2>
 
-    <label>Address:</label><br>
-    <textarea name="address" required></textarea><br><br>
+    <form action="submit-application.php" method="POST">
+        <input type="hidden" name="animal_id" value="<?php echo $animal['animal_id']; ?>">
 
-    <label>Housing Type:</label><br>
-    <input type="text" name="housing_type" placeholder="House, flat, rented, owned..." required><br><br>
+        <label>Full Name:</label>
+        <input type="text" name="full_name" required>
 
-    <label>Previous Pet Experience:</label><br>
-    <textarea name="experience" required></textarea><br><br>
+        <br><br>
 
-    <button type="submit">Submit Application</button>
-</form>
+        <label>Email:</label>
+        <input type="email" name="email" required>
 
-<br>
-<a href="animal-details.php?id=<?php echo $animal['animal_id']; ?>">Back to Animal Details</a>
+        <br><br>
 
-</body>
-</html>
+        <label>Phone:</label>
+        <input type="text" name="phone">
+
+        <br><br>
+
+        <label>Address:</label>
+        <textarea name="address" required></textarea>
+
+        <br><br>
+
+        <label>Housing Type:</label>
+        <input
+            type="text"
+            name="housing_type"
+            placeholder="House, flat, rented, owned..."
+            required>
+
+        <br><br>
+
+        <label>Previous Pet Experience:</label>
+        <textarea name="experience" required></textarea>
+
+        <br><br>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+
+<a class="btn" href="animal-details.php?id=<?php echo $animal['animal_id']; ?>">
+    Back to Animal Details
+</a>
+
+<?php require_once '../includes/footer.php'; ?>

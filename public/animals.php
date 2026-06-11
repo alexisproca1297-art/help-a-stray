@@ -78,7 +78,12 @@ require_once '../includes/header.php';
             <p><strong>Species:</strong> <?php echo htmlspecialchars($animal['species']); ?></p>
             <p><strong>Breed:</strong> <?php echo htmlspecialchars($animal['breed']); ?></p>
             <p><strong>Age:</strong> <?php echo htmlspecialchars($animal['age']); ?> years</p>
-            <p><strong>Status:</strong> <?php echo htmlspecialchars($animal['status']); ?></p>
+            <p>
+            <strong>Status:</strong>
+            <span class="badge badge-<?php echo strtolower($animal['status']); ?>">
+            <?php echo htmlspecialchars($animal['status']); ?>
+            </span>
+            </p>
             <p><?php echo htmlspecialchars($animal['description']); ?></p>
             <a class="btn" href="animal-details.php?id=<?php echo $animal['animal_id']; ?>">View Details</a>
         </div>

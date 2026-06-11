@@ -21,31 +21,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Invalid username or password.";
     }
 }
+$pageTitle = "Admin Login | Help A Stray";
+require_once '../includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin Login | Help A Stray</title>
-</head>
-<body>
 
 <h1>Admin Login</h1>
 
-<?php if ($error): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
-<?php endif; ?>
+<div class="card">
+    <p>Please log in to access the rescue centre administration area.</p>
 
-<form method="POST">
-    <label>Username:</label><br>
-    <input type="text" name="username" required><br><br>
+    <?php if ($error): ?>
+        <p class="error"><?php echo htmlspecialchars($error); ?></p>
+    <?php endif; ?>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
+    <form method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" required>
 
-    <button type="submit">Login</button>
-</form>
+        <br><br>
 
-</body>
-</html>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <br><br>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<?php require_once '../includes/footer.php'; ?>

@@ -60,8 +60,12 @@ require_once '../includes/header.php';
 <div class="card">
     <h2>Application Status</h2>
 
-    <p><strong>Current Status:</strong> <?php echo htmlspecialchars($application['status']); ?></p>
-    <p><strong>Submitted:</strong> <?php echo htmlspecialchars($application['application_date']); ?></p>
+<p>
+    <strong>Current Status:</strong>
+    <span class="badge badge-<?php echo strtolower($application['status']); ?>">
+        <?php echo htmlspecialchars($application['status']); ?>
+    </span>
+</p>    <p><strong>Submitted:</strong> <?php echo htmlspecialchars($application['application_date']); ?></p>
 
     <form action="update-application-status.php" method="POST">
         <input type="hidden" name="application_id" value="<?php echo $application['application_id']; ?>">

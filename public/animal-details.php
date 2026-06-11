@@ -33,8 +33,12 @@ require_once '../includes/header.php';
     <p><strong>Breed:</strong> <?php echo htmlspecialchars($animal['breed']); ?></p>
     <p><strong>Age:</strong> <?php echo htmlspecialchars($animal['age']); ?> years</p>
     <p><strong>Gender:</strong> <?php echo htmlspecialchars($animal['gender']); ?></p>
-    <p><strong>Status:</strong> <?php echo htmlspecialchars($animal['status']); ?></p>
-
+<p>
+    <strong>Status:</strong>
+    <span class="badge badge-<?php echo strtolower($animal['status']); ?>">
+        <?php echo htmlspecialchars($animal['status']); ?>
+    </span>
+</p>
     <p><?php echo htmlspecialchars($animal['description']); ?></p>
 
     <?php if ($animal['status'] === 'Available'): ?>
