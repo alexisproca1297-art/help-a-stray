@@ -12,6 +12,8 @@
     <nav>
         <a href="/help-a-stray/public/index.php">Home</a>
         <a href="/help-a-stray/public/animals.php">Animals</a>
+        <a href="/help-a-stray/public/about.php">About</a>
+        <a href="/help-a-stray/public/contact.php">Contact</a>
         <a href="/help-a-stray/admin/login.php">Admin</a>
     </nav>
 </header>
