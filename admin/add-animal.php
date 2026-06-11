@@ -17,7 +17,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $age = trim($_POST['age'] ?? '');
     $gender = $_POST['gender'] ?? '';
     $description = trim($_POST['description'] ?? '');
-    $image = trim($_POST['image'] ?? '');
+    $image = "";
+
+if (!empty($_FILES['image']['name'])) {
+    $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+    $fileType = $_FILES['image']['type'];
+
+    if (!in_array($fileType, $allowedTypes)) {
+        $error = "Only JPG, PNG, GIF and WEBP images are allowed.";
+    } else {
+        $uploadDir = '../public/uploads/';
+        $fileName = time() . '_' . basename($_FILES['image']['name']);
+        $targetPath = $uploadDir . $fileName;
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $targetPath)) {
+            $image = $fileName;
+        } else {
+            $error = "Image upload failed.";
+        }
+    }
+}
     $status = $_POST['status'] ?? 'Available';
 
     if (empty($name) || empty($species) || empty($gender) || empty($description)) {
@@ -69,7 +88,7 @@ require_once '../includes/header.php';
 <?php endif; ?>
 
 <div class="card">
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <label>Name:</label>
         <input type="text" name="name" required>
 
@@ -105,7 +124,7 @@ require_once '../includes/header.php';
         <br><br>
 
         <label>Image filename:</label>
-        <input type="text" name="image" placeholder="example.jpg">
+        <input type="file" name="image" accept="image/*">
 
         <br><br>
 
