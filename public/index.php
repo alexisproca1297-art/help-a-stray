@@ -44,7 +44,16 @@ require_once '../includes/header.php';
 <div class="grid">
     <?php foreach ($featuredAnimals as $animal): ?>
         <div class="card">
+
+            <?php if (!empty($animal['image'])): ?>
+                <img
+                    src="uploads/<?php echo htmlspecialchars($animal['image']); ?>"
+                    alt="<?php echo htmlspecialchars($animal['name']); ?>"
+                    style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
+            <?php endif; ?>
+
             <h3><?php echo htmlspecialchars($animal['name']); ?></h3>
+
             <p><strong>Species:</strong> <?php echo htmlspecialchars($animal['species']); ?></p>
             <p><strong>Breed:</strong> <?php echo htmlspecialchars($animal['breed']); ?></p>
             <p><?php echo htmlspecialchars($animal['description']); ?></p>
@@ -52,6 +61,7 @@ require_once '../includes/header.php';
             <a class="btn" href="animal-details.php?id=<?php echo $animal['animal_id']; ?>">
                 View Details
             </a>
+
         </div>
     <?php endforeach; ?>
 </div>
