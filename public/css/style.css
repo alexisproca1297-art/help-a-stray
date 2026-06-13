@@ -209,3 +209,15 @@ table {
         font-size: 0.9rem;
     }
 }
+
+img {
+    max-width: 100%;
+}
+
+.card img {
+    display: block;
+}
+
+.card {
+    transition: 0.2s ease;
+}
