@@ -47,9 +47,9 @@ require_once '../includes/header.php';
 
             <?php if (!empty($animal['image'])): ?>
                 <img
+                    class="animal-image"
                     src="uploads/<?php echo htmlspecialchars($animal['image']); ?>"
-                    alt="<?php echo htmlspecialchars($animal['name']); ?>"
-                    style="width:100%; height:220px; object-fit:cover; border-radius:10px; margin-bottom:15px;">
+                    alt="<?php echo htmlspecialchars($animal['name']); ?>">
             <?php endif; ?>
 
             <h3><?php echo htmlspecialchars($animal['name']); ?></h3>

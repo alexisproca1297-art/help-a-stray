@@ -171,14 +171,9 @@ require_once '../includes/header.php';
     <p>Current Image:</p>
 
     <img
-        src="../public/uploads/<?php echo htmlspecialchars($animal['image']); ?>"
-        alt="<?php echo htmlspecialchars($animal['name']); ?>"
-        style="
-            width:220px;
-            border-radius:10px;
-            margin-bottom:15px;
-            display:block;
-        ">
+    class="animal-image"
+    src="../public/uploads/<?php echo htmlspecialchars($animal['image']); ?>"
+    alt="<?php echo htmlspecialchars($animal['name']); ?>">
 <?php endif; ?>
 
 <label>Upload New Image:</label>

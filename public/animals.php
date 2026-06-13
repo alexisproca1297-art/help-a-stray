@@ -69,11 +69,11 @@ require_once '../includes/header.php';
     <?php foreach ($animals as $animal): ?>
         <div class="card">
             <?php if (!empty($animal['image'])): ?>
-    <img 
-        src="uploads/<?php echo htmlspecialchars($animal['image']); ?>" 
-        alt="<?php echo htmlspecialchars($animal['name']); ?>" 
-        style="width:100%; height:180px; object-fit:cover; border-radius:8px;">
-<?php endif; ?>
+                <img
+                    class="animal-image"
+                    src="uploads/<?php echo htmlspecialchars($animal['image']); ?>"
+                    alt="<?php echo htmlspecialchars($animal['name']); ?>">
+            <?php endif; ?>
             <h2><?php echo htmlspecialchars($animal['name']); ?></h2>
             <p><strong>Species:</strong> <?php echo htmlspecialchars($animal['species']); ?></p>
             <p><strong>Breed:</strong> <?php echo htmlspecialchars($animal['breed']); ?></p>

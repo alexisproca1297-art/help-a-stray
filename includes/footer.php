@@ -1,7 +1,7 @@
 </div>
 
 <footer>
-    <p>&copy; <?php echo date('Y'); ?> Help A Stray. Computing Project Prototype.</p>
+    <p>&copy; <?php echo date('Y'); ?> Help A Stray | Animal Rescue & Adoption Management System</p>
 </footer>
 
 </body>

@@ -23,11 +23,11 @@ require_once '../includes/header.php';
     <h1><?php echo htmlspecialchars($animal['name']); ?></h1>
 
     <?php if (!empty($animal['image'])): ?>
-    <img 
-        src="uploads/<?php echo htmlspecialchars($animal['image']); ?>" 
-        alt="<?php echo htmlspecialchars($animal['name']); ?>" 
-        style="width:100%; max-height:350px; object-fit:cover; border-radius:10px; margin-bottom:20px;">
-<?php endif; ?>
+                <img
+                    class="animal-image"
+                    src="uploads/<?php echo htmlspecialchars($animal['image']); ?>"
+                    alt="<?php echo htmlspecialchars($animal['name']); ?>">
+            <?php endif; ?>
 
     <p><strong>Species:</strong> <?php echo htmlspecialchars($animal['species']); ?></p>
     <p><strong>Breed:</strong> <?php echo htmlspecialchars($animal['breed']); ?></p>

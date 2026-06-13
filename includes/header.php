@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo $pageTitle ?? 'Help A Stray'; ?></title>
-    <link rel="stylesheet" href="/help-a-stray/public/css/style.css">
+    <link rel="stylesheet" href="/help-a-stray/public/css/style.css?v=2">
 </head>
 <body>
 
 <header>
-    <h1>Help A Stray</h1>
+    <h1>🐾 Help A Stray</h1>
     <nav>
         <a href="/help-a-stray/public/index.php">Home</a>
         <a href="/help-a-stray/public/animals.php">Animals</a>
