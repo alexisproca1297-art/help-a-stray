@@ -16,7 +16,7 @@ Testing was carried out throughout development to verify that the Help A Stray p
 | Add Animal          | Pass   |
 | Edit Animal         | Pass   |
 | Delete Animal       | Pass   |
-| Upload Image        | Pass   |
+| Upload Image        | Partially passed / needs improvement |
 | View Applications   | Pass   |
 | Approve Application | Pass   |
 | Reject Application  | Pass   |
@@ -24,4 +24,4 @@ Testing was carried out throughout development to verify that the Help A Stray p
 
 ## Summary
 
-All core prototype features were tested successfully. No critical defects were identified. Minor interface improvements were implemented during development to improve usability and presentation.
+Most core prototype features were tested successfully. File upload validation was identified as an area for improvement because stricter server-side validation would be required before live deployment.
