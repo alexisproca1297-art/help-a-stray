@@ -54,4 +54,22 @@ The project follows a simple three-tier structure:
 
 ## Project Status
 
-Prototype development in progress.
+Prototype completed for final university submission.
+
+Setup note: This prototype was developed and tested locally using XAMPP, Apache, PHP and MySQL. After downloading the repository as a ZIP file, rename the extracted folder from help-a-stray-main to help-a-stray and place it inside the XAMPP htdocs folder.
+
+Local public site URL:
+http://localhost/help-a-stray/public/index.php
+
+Administrator login page:
+http://localhost/help-a-stray/admin/login.php
+
+Demo login:
+Username: admin
+Password: admin123
+
+Database name:
+help_a_stray
+
+Database export:
+database/help_a_stray.sql
